@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Smile</title>
+	<link href="img/icon.png" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+<style>
+	#canvas {
+		margin: 50px auto;
+		display: block;
+		border: 1px solid red;
+	}
+</style>
+<body>
+	<canvas id="canvas" height="300px" width="300px"></canvas>
+</body>
+<script>
+	var canvas = document.getElementById('canvas');
+  	if (canvas.getContext) {
+  		var ctx = canvas.getContext('2d');
+  		ctx.beginPath();
+  		ctx.arc(150,150,100,0,2*Math.PI,false);
+  		ctx.stroke();
+
+  		ctx.beginPath();
+  		ctx.arc(125,125,10,0,2*Math.PI,false);
+  		ctx.stroke();
+
+  		ctx.beginPath();
+  		ctx.arc(175,125,10,0,2*Math.PI,false);
+  		ctx.stroke();
+
+  		ctx.beginPath();
+  		ctx.arc(150,165,40,0,Math.PI,false);
+  		ctx.stroke();
+  	} else {
+  		console.log('fail!');
+  	}
+</script>
+</html>

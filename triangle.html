@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Triangle</title>
+	<link href="img/icon.png" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+<style>
+	#triangle {
+		border: 1px solid red;
+	}
+</style>
+<body>
+	<canvas id="triangle"></canvas>
+</body>
+<script>
+	var canvas = document.getElementById('triangle');
+	if (canvas.getContext) {
+		var ctx = canvas.getContext('2d');
+
+		/*填充三角形*/
+		ctx.beginPath();
+		ctx.moveTo(75,50);
+		ctx.lineTo(100,75);
+		ctx.lineTo(100,25);
+		ctx.fill();
+
+
+		/*描边三角形*/
+		ctx.beginPath();
+		ctx.moveTo(110,25);
+		ctx.lineTo(135,50);
+		ctx.lineTo(110,75);
+		ctx.closePath();
+		ctx.stroke();
+	}
+</script>
+</html>

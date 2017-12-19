@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Circle</title>
+	<link href="img/icon.png" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+<style>
+	#circle {
+		border: 1px solid red;
+	}
+</style>
+<body>
+	<canvas id="circle" height="300px" width="300px"></canvas>
+</body>
+<script>
+	var canvas = document.getElementById('circle');
+	if (canvas.getContext) {
+		var ctx = canvas.getContext('2d');
+
+		ctx.beginPath();
+		ctx.arc(200, 200, 50, 0, 0.5*Math.PI, true);
+		ctx.stroke();
+		for (var i = 0; i < 4; i++) {
+			for (var j = 0; j < 3; j++) {
+				ctx.beginPath();
+
+
+				var x = 25 + j*50; //x坐标
+				var y = 25 + i*50; //y坐标
+				var radius = 20; //圆弧半径
+				var startAngle = 0; //开始点
+				var endAngle = Math.PI+(Math.PI*j)/2; //结束点
+				var anticlockwise = i%2==0 ? false : true; //顺时针or逆时针
+
+				ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+
+				if (i > 1) {
+					ctx.fill();
+				} else {
+					ctx.stroke();
+				}
+			}
+		}
+	}
+</script>
+</html>
