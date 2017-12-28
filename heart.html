@@ -20,24 +20,23 @@
 <script>
 	var canvas = document.getElementById('canvas');
 	if (canvas.getContext) {
-		var ctx = canvas.getContext('2d');
-		ctx.fillStyle = 'rgba(100,60,89,0.5)';
+		ctx = canvas.getContext('2d');
+		ctx.fillStyle = 'rgba(100,20,88,.5)';
 		ctx.fillRect(0,0,400,300);
-		ctx.strokeStyle = 'rgba(100,50,79,0.8)';
-		
+
+		/*heart*/
 		ctx.beginPath();
-		ctx.moveTo(70,20);
-		ctx.quadraticCurveTo(20,20,20,100);
-		ctx.quadraticCurveTo(20,120,60,120);
-		ctx.quadraticCurveTo(80,140,30,160);
-		ctx.quadraticCurveTo(100,140,80,120);
-		ctx.quadraticCurveTo(100,125,190,120);
-		ctx.quadraticCurveTo(220,110,210,40);
-		ctx.quadraticCurveTo(200,20,170,22);
-		ctx.quadraticCurveTo(100,20,70,20)
+		ctx.strokeStyle = 'rgb(100,78,125)';
+		ctx.fillStyle = 'rgba(10,20,88,.5)';
+		ctx.moveTo(75,40);
+		ctx.bezierCurveTo(75,37,70,25,50,25);
+		ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
+		ctx.bezierCurveTo(20,80,40,102,70,130);
+		ctx.bezierCurveTo(110,102,130,80,130,62.5);
+		ctx.bezierCurveTo(130,62.5,130,25,100,25);
+		ctx.bezierCurveTo(85,25,75,37,75,40);
 		ctx.stroke();
-
-
+		ctx.fill();
 	} else {
 		console.log(222);
 	}
