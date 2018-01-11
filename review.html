@@ -8,7 +8,7 @@
 <style>
 	canvas {
 		background-color: #ffffff;
-		border: 1px solid red;
+		border: 1px solid blue;
 	}
 </style>
 <body>
@@ -18,13 +18,8 @@
 	var canvas = document.getElementById('canvas');
 	if (canvas.getContext) {
 		var ctx = canvas.getContext('2d');
-		ctx.strokeStyle = 'green';
-		ctx.lineWidth = 8;
-		ctx.lineCap = 'square';
-		ctx.beginPath();
-		ctx.moveTo(20,20);
-		ctx.lineTo(20,50);
-		ctx.stroke();
+		var lingrad = ctx.createLinearGradient(0,0,0,150);
+		ctx.fillRect(10,10,130,130);
 	} else {
 		console.log('no');
 	}
